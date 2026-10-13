@@ -18,8 +18,8 @@ def pubs(items, prefix=''):
     entries=[]
     for p in items:
         meta=f'{p["venue"]}, {p["year"]}' + (f', {p["volume"]}' if p['volume'] else '') + '.'
-        links=link('https://doi.org/'+p['doi'],'DOI: '+p['doi']) if p['doi'] else link(D['official_homepage'],'Faculty profile')
-        entries.append(f'<li id="{e(prefix+p["id"])}"><div class="publication-title">{e(p["title"])}</div><div class="authors">{e(p["authors"])}</div><div class="publication-meta">{e(meta)}</div><div class="publication-links">{links}</div></li>')
+        links=link('https://doi.org/'+p['doi'],'DOI: '+p['doi']) if p['doi'] else (link(p['url'],'Publication') if p.get('url') else '')
+        entries.append(f'<li id="{e(prefix+p["id"])}"><div class="publication-title">{e(p["title"])}</div><div class="authors">{e(p["authors"]).replace("Jun Jin", "<strong>Jun Jin</strong>").replace("金君", "<strong>金君</strong>")}</div><div class="publication-meta">{e(meta)}</div><div class="publication-links">{links}</div></li>')
     return '<ul class="publications">'+''.join(entries)+'</ul>'
 interest='<ul class="interest-list">'+''.join(f'<li>{link("paper_topic.html#"+x["id"],x["en"])} <span lang="zh-CN">· {e(x["cn"])}</span></li>' for x in D['interests'])+'</ul>'
 home=f'''<section class="intro" aria-label="Profile"><img class="portrait" src="{e(D['portrait'])}" alt="Portrait of Jun Jin" width="350" height="421"><div><p>My name is Jun Jin (金君). I am a lecturer and master's supervisor at the School of Mathematical Sciences, Yangzhou University.</p><p lang="zh-CN">扬州大学数学科学学院 · 讲师 · 硕士生导师</p><p>E-mail: {link('mailto:'+D['email'],D['email'])}<br>{link(D['official_homepage'],'Yangzhou University faculty profile')}<br>{link(D['github'],'GitHub')}</p><p>Office: {e(D['office'])}</p><h2>Research interests</h2><p>I work on nonparametric statistics and statistical learning, with a current focus on:</p>{interest}<div class="invite"><p>I welcome inquiries about graduate study and research collaboration in statistics and machine learning.</p><p lang="zh-CN">欢迎对统计学与机器学习感兴趣的同学交流，也欢迎开展科研合作。</p></div></div></section>'''
@@ -28,9 +28,12 @@ for key,label in [('education','Education'),('experience','Experience')]:
 home+='<h2>Research overview</h2><p>My research connects communication-efficient statistical inference with robust nonlinear learning and the analysis of spatial and image data. I am also interested in generative modelling, as part of a broader statistical machine learning programme.</p><h2>Academic service</h2><p>Reviewer for '+', '.join(e(x) for x in D['service'])+', among other journals.</p>'
 if D['news']: home+='<h2>News</h2><ul>'+''.join(f'<li>{e(x)}</li>' for x in D['news'])+'</ul>'
 page('index.html',D['name']+' ['+D['name_cn']+']',home)
-papers='<p>Publication information follows the '+link(D['official_homepage'],'official faculty profile')+'.</p><p class="quiet">* Corresponding author · # Student author</p>'
-for year in sorted({p['year'] for p in D['publications']},reverse=True):
+papers='<p>Publications listed by year, based on my '+link(D['official_homepage'],'official faculty profile')+' and updated publication record.</p><p class="quiet">* Corresponding author · # Student author</p>'
+for year in sorted({p['year'] for p in D['publications'] if not 2017 <= p['year'] <= 2020},reverse=True):
     papers+=f'<h2>{year}</h2>'+pubs([p for p in D['publications'] if p['year']==year])
+early=sorted([p for p in D['publications'] if 2017 <= p['year'] <= 2020],key=lambda p:p['year'],reverse=True)
+if early:
+    papers+='<h2>2017–2020</h2>'+pubs(early)
 papers+='<p class="source-note">For the full publication record, please see the official faculty profile.</p>'
 page('paper.html','Selected publications',papers)
 topics='<div class="topic-links">'+''.join(link('#'+x['id'],x['en']) for x in D['interests'])+link('#nonparametric','Nonparametric and robust regression')+'</div>'
@@ -41,6 +44,7 @@ for x in D['interests']:
     topics+='</section>'
 topics+='<section id="nonparametric"><h2>Nonparametric and robust regression</h2>'+pubs([p for p in D['publications'] if 'nonparametric' in p['topics'] or 'robust' in p['topics']], 'nonparametric-')+'</section>'
 topics+='<section id="clustering"><h2>Clustering and applied statistical modelling</h2>'+pubs([p for p in D['publications'] if 'clustering' in p['topics']], 'clustering-')+'</section>'
+topics+='<section id="applications"><h2>Applied statistics and interdisciplinary research</h2>'+pubs([p for p in D['publications'] if 'applications' in p['topics']], 'applications-')+'</section>'
 page('paper_topic.html','Publications and research by topics',topics)
 grants='<p>My research focuses on nonparametric statistics, distributed statistical learning, and spatial and image data modelling.</p>'
 if D['grants']: grants+='<h2>Research grants</h2><ul>'+''.join(f'<li>{e(x)}</li>' for x in D['grants'])+'</ul>'

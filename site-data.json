@@ -50,7 +50,7 @@
   "education": [
     {
       "institution": "Southwestern University of Finance and Economics",
-      "detail": "September 2018 – June 2022 · Statistics, doctoral degree in Economics · 西南财经大学，统计学，经济学博士"
+      "detail": "September 2018 – June 2022 · Ph.D. in Statistics · 西南财经大学，统计学博士"
     }
   ],
   "experience": [
@@ -261,10 +261,12 @@
       "year": 2018,
       "title": "人体内血醇浓度变化及其影响因素分析.",
       "authors": "金君，戴家佳*，杜彦斌，张艳",
-      "venue": "中国法医学杂志",
-      "volume": "33(1): 58–61",
+      "venue": "中国法医学杂志（北大核心）",
+      "volume": "33(01): 58–61",
       "doi": "",
-      "topics": [],
+      "topics": [
+        "applications"
+      ],
       "url": "https://teacher.yzu.edu.cn/JJ1234567/zh_CN/index/496567/list/index.htm"
     },
     {
@@ -272,13 +274,66 @@
       "year": 2017,
       "title": "单指标变系数模型的B样条估计.",
       "authors": "金君，戴家佳*，杜彦斌",
-      "venue": "系统科学与数学",
+      "venue": "系统科学与数学（北大核心）",
       "volume": "37(12): 2427–2442",
       "doi": "",
       "topics": [
         "nonparametric"
       ],
       "url": "https://teacher.yzu.edu.cn/JJ1234567/zh_CN/index/496567/list/index.htm"
+    },
+    {
+      "id": "li2023sponsorship",
+      "year": 2023,
+      "title": "体育赛事集体赞助与运动员个人赞助的利益权衡——基于演化博弈的视角.",
+      "authors": "李仪，郜墨，金君",
+      "venue": "体育与科学（CSSCI）",
+      "volume": "44: 105–112",
+      "topics": [
+        "applications"
+      ],
+      "doi": "",
+      "url": ""
+    },
+    {
+      "id": "jin2018ethanol",
+      "year": 2018,
+      "title": "饮酒后血液中乙醇含量的推断.",
+      "authors": "金君，郝晨艳，戴家佳*",
+      "venue": "数学的实践与认知（北大核心）",
+      "volume": "48(11): 175–182",
+      "topics": [
+        "applications"
+      ],
+      "doi": "",
+      "url": ""
+    },
+    {
+      "id": "du2018stability",
+      "year": 2018,
+      "title": "复发事件下一类加性乘性转移模型p阶矩指数稳定性.",
+      "authors": "杜彦斌，戴家佳*，金君",
+      "venue": "应用数学学报（北大核心）",
+      "volume": "41(05): 642–652",
+      "topics": [
+        "applications"
+      ],
+      "doi": "",
+      "url": ""
+    },
+    {
+      "id": "du2018semiparametric",
+      "year": 2018,
+      "title": "多类型复发事件数据下一类半参数转移模型.",
+      "authors": "杜彦斌，戴家佳*，金君",
+      "venue": "统计与信息论坛（CSSCI）",
+      "volume": "33(4): 20–24",
+      "topics": [
+        "nonparametric",
+        "applications"
+      ],
+      "doi": "",
+      "url": ""
     }
   ],
   "grants": [
@@ -307,5 +362,5 @@
     "PLOS ONE",
     "系统科学与数学"
   ],
-  "source": "Official faculty homepage, accessed 13 October 2026"
+  "source": "Official faculty homepage and author-provided additions, updated 13 October 2026"
 }
