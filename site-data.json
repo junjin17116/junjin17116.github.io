@@ -1,0 +1,311 @@
+{
+  "name": "Jun Jin",
+  "name_cn": "金君",
+  "role": "Lecturer and Master's Supervisor",
+  "school": "School of Mathematical Sciences",
+  "university": "Yangzhou University",
+  "email": "junjin@yzu.edu.cn",
+  "official_homepage": "https://teacher.yzu.edu.cn/JJ1234567/zh_CN/index/496567/list/index.htm",
+  "github": "https://github.com/junjin17116",
+  "updated": "2026-10-13",
+  "portrait": "assets/photo.png",
+  "interests": [
+    {
+      "id": "federated",
+      "en": "Federated learning",
+      "cn": "联邦学习",
+      "description": "Collaborative statistical learning across institutions, with attention to heterogeneous data and data locality."
+    },
+    {
+      "id": "distributed",
+      "en": "Distributed learning and statistical inference",
+      "cn": "分布式学习与统计推断",
+      "description": "Communication-efficient estimation and inference, including one-round aggregation, curvature transfer and gradient-matched surrogate methods."
+    },
+    {
+      "id": "privacy",
+      "en": "Differential privacy",
+      "cn": "差分隐私",
+      "description": "Privacy-preserving estimation and inference for distributed statistical learning."
+    },
+    {
+      "id": "neural",
+      "en": "Neural networks and robust regression",
+      "cn": "神经网络与稳健回归",
+      "description": "Nonlinear statistical learning using neural networks, with particular interest in quantile, composite quantile and expectile regression."
+    },
+    {
+      "id": "conformal",
+      "en": "Conformal prediction",
+      "cn": "共形预测",
+      "description": "Predictive uncertainty quantification and coverage guarantees."
+    },
+    {
+      "id": "image",
+      "en": "Spatial and image data analysis",
+      "cn": "空间与图像数据分析",
+      "description": "Nonparametric and spatially varying coefficient models on complex domains, with applications to image data."
+    }
+  ],
+  "education": [
+    {
+      "institution": "Southwestern University of Finance and Economics",
+      "detail": "September 2018 – June 2022 · Statistics, doctoral degree in Economics · 西南财经大学，统计学，经济学博士"
+    }
+  ],
+  "experience": [
+    {
+      "institution": "Yangzhou University",
+      "detail": "June 2022 – Present · Lecturer, School of Mathematical Sciences; Master's Supervisor · 扬州大学数学科学学院，讲师、硕士生导师"
+    },
+    {
+      "institution": "Fudan University",
+      "detail": "August 2024 – July 2025 · Visiting Scholar, Department of Statistics and Data Science; Host: Prof. Zhongyi Zhu · 复旦大学统计与数据科学系访问学者，合作导师：朱仲义教授"
+    }
+  ],
+  "publications": [
+    {
+      "id": "jin2026multivariate",
+      "year": 2026,
+      "title": "Communication-Efficient Distributed Inference and Diagnostics for Multivariate Linear Models.",
+      "authors": "Chenyan Hao#, Ying Chen#, Jun Jin*",
+      "venue": "Journal of Statistical Computation and Simulation",
+      "volume": "",
+      "doi": "10.1080/00949655.2026.2749428",
+      "topics": [
+        "distributed"
+      ],
+      "url": "https://doi.org/10.1080/00949655.2026.2749428"
+    },
+    {
+      "id": "jin2026dcsqrnn",
+      "year": 2026,
+      "title": "Communication-efficient Distributed Quantile Regression Neural Networks via Convolution Smoothing and Poisson Sampling.",
+      "authors": "Chenyan Hao#, Ying Chen#, Jun Jin*, Tiefeng Ma, Shuangzhe Liu",
+      "venue": "Expert Systems with Applications",
+      "volume": "",
+      "doi": "10.1016/j.eswa.2026.134604",
+      "topics": [
+        "distributed",
+        "neural",
+        "robust"
+      ],
+      "url": "https://doi.org/10.1016/j.eswa.2026.134604"
+    },
+    {
+      "id": "jin2026expectile",
+      "year": 2026,
+      "title": "Distributed Composite Expectile Regression Neural Network for Large-Scale Nonlinear Modeling.",
+      "authors": "Jun Jin*, Ying Chen#, Tiefeng Ma, Shuangzhe Liu",
+      "venue": "Neurocomputing",
+      "volume": "",
+      "doi": "10.1016/j.neucom.2026.133836",
+      "topics": [
+        "distributed",
+        "neural",
+        "robust"
+      ],
+      "url": "https://doi.org/10.1016/j.neucom.2026.133836"
+    },
+    {
+      "id": "jin2026dqr",
+      "year": 2026,
+      "title": "Distributed Quantile Regression via Convolution Smoothing and Optimal Subsampling.",
+      "authors": "Jun Jin*, Qinhan Liang#, Tiefeng Ma, Shuangzhe Liu",
+      "venue": "Computational Statistics & Data Analysis",
+      "volume": "",
+      "doi": "10.1016/j.csda.2026.108417",
+      "topics": [
+        "distributed",
+        "robust"
+      ],
+      "url": "https://doi.org/10.1016/j.csda.2026.108417"
+    },
+    {
+      "id": "jin2026dcqr",
+      "year": 2026,
+      "title": "Communication-efficient Distributed Composite Quantile Regression via Convolution Smoothing and Poisson Subsampling.",
+      "authors": "Jun Jin*, Qinhan Liang#",
+      "venue": "Statistical Papers",
+      "volume": "",
+      "doi": "10.1007/s00362-025-01787-7",
+      "topics": [
+        "distributed",
+        "robust"
+      ],
+      "url": "https://doi.org/10.1007/s00362-025-01787-7"
+    },
+    {
+      "id": "huang2025clustering",
+      "year": 2025,
+      "title": "A saddle point-guided clustering algorithm for data with complex structure.",
+      "authors": "Xiaogang Huang, Jun Jin, Dan Zhuang, Tiefeng Ma, M. van de Velden, Shuangzhe Liu",
+      "venue": "Knowledge-Based Systems",
+      "volume": "Article 114726",
+      "doi": "",
+      "topics": [
+        "clustering"
+      ],
+      "url": "https://teacher.yzu.edu.cn/JJ1234567/zh_CN/index/496567/list/index.htm"
+    },
+    {
+      "id": "jin2025nonrandom",
+      "year": 2025,
+      "title": "Composite quantile regression for a distributed system with non-randomly distributed data.",
+      "authors": "Jun Jin*, Chenyan Hao#, Yewen Chen",
+      "venue": "Statistical Papers",
+      "volume": "66(1)",
+      "doi": "",
+      "topics": [
+        "distributed",
+        "robust"
+      ],
+      "url": "https://teacher.yzu.edu.cn/JJ1234567/zh_CN/index/496567/list/index.htm"
+    },
+    {
+      "id": "jin2024logistic",
+      "year": 2024,
+      "title": "Robust and efficient subsampling algorithms for massive data logistic regression.",
+      "authors": "Jun Jin*, Shuangzhe Liu, Tiefeng Ma",
+      "venue": "Journal of Applied Statistics",
+      "volume": "51(8): 1427–1445",
+      "doi": "",
+      "topics": [
+        "robust"
+      ],
+      "url": "https://teacher.yzu.edu.cn/JJ1234567/zh_CN/index/496567/list/index.htm"
+    },
+    {
+      "id": "jin2023cqr",
+      "year": 2023,
+      "title": "Optimal subsampling algorithms for composite quantile regression in massive data.",
+      "authors": "Jun Jin*, Shuangzhe Liu, Tiefeng Ma",
+      "venue": "Statistics",
+      "volume": "57(4): 811–843",
+      "doi": "",
+      "topics": [
+        "robust"
+      ],
+      "url": "https://teacher.yzu.edu.cn/JJ1234567/zh_CN/index/496567/list/index.htm"
+    },
+    {
+      "id": "jin2023modal",
+      "year": 2023,
+      "title": "Distributed penalized modal regression for massive data.",
+      "authors": "Jun Jin*, Shuangzhe Liu, Tiefeng Ma",
+      "venue": "Journal of Systems Science & Complexity",
+      "volume": "36(2): 798–821",
+      "doi": "",
+      "topics": [
+        "distributed",
+        "robust"
+      ],
+      "url": "https://teacher.yzu.edu.cn/JJ1234567/zh_CN/index/496567/list/index.htm"
+    },
+    {
+      "id": "jin2021missing",
+      "year": 2021,
+      "title": "Penalized weighted composite quantile regression for partially linear varying coefficient models with missing covariates.",
+      "authors": "Jun Jin*, Tiefeng Ma, Jiajia Dai, Shuangzhe Liu",
+      "venue": "Computational Statistics",
+      "volume": "36: 541–575",
+      "doi": "",
+      "topics": [
+        "nonparametric",
+        "robust"
+      ],
+      "url": "https://teacher.yzu.edu.cn/JJ1234567/zh_CN/index/496567/list/index.htm"
+    },
+    {
+      "id": "jin2021splines",
+      "year": 2021,
+      "title": "New efficient spline estimation for varying-coefficient models with two-step knot number selection.",
+      "authors": "Jun Jin*, Jiajia Dai, Tiefeng Ma",
+      "venue": "Metrika",
+      "volume": "84: 693–712",
+      "doi": "",
+      "topics": [
+        "nonparametric"
+      ],
+      "url": "https://teacher.yzu.edu.cn/JJ1234567/zh_CN/index/496567/list/index.htm"
+    },
+    {
+      "id": "jin2019splines",
+      "year": 2019,
+      "title": "B-spline estimation for partially linear varying coefficient composite quantile regression models.",
+      "authors": "Jun Jin*, Chenyan Hao#, Tiefeng Ma",
+      "venue": "Communications in Statistics - Theory and Methods",
+      "volume": "48(21): 5322–5335",
+      "doi": "",
+      "topics": [
+        "nonparametric",
+        "robust"
+      ],
+      "url": "https://teacher.yzu.edu.cn/JJ1234567/zh_CN/index/496567/list/index.htm"
+    },
+    {
+      "id": "hao2022voltage",
+      "year": 2022,
+      "title": "Clustering analysis of voltage sag events based on waveform matching.",
+      "authors": "Chenyan Hao#, Jun Jin*",
+      "venue": "Processes",
+      "volume": "10(7): 133–145",
+      "doi": "",
+      "topics": [
+        "clustering"
+      ],
+      "url": "https://teacher.yzu.edu.cn/JJ1234567/zh_CN/index/496567/list/index.htm"
+    },
+    {
+      "id": "jin2018alcohol",
+      "year": 2018,
+      "title": "人体内血醇浓度变化及其影响因素分析.",
+      "authors": "金君，戴家佳*，杜彦斌，张艳",
+      "venue": "中国法医学杂志",
+      "volume": "33(1): 58–61",
+      "doi": "",
+      "topics": [],
+      "url": "https://teacher.yzu.edu.cn/JJ1234567/zh_CN/index/496567/list/index.htm"
+    },
+    {
+      "id": "jin2017singleindex",
+      "year": 2017,
+      "title": "单指标变系数模型的B样条估计.",
+      "authors": "金君，戴家佳*，杜彦斌",
+      "venue": "系统科学与数学",
+      "volume": "37(12): 2427–2442",
+      "doi": "",
+      "topics": [
+        "nonparametric"
+      ],
+      "url": "https://teacher.yzu.edu.cn/JJ1234567/zh_CN/index/496567/list/index.htm"
+    }
+  ],
+  "grants": [
+    "China Postdoctoral Science Foundation, General Program · 中国博士后科学基金面上项目 · 主持",
+    "Natural Science Foundation of Jiangsu Province, Young Scientists Program · 江苏省自然科学基金青年项目 · 主持",
+    "Natural Science Research Program of Jiangsu Higher Education Institutions, General Program · 江苏省高校自然科学研究面上项目 · 主持",
+    "Philosophy and Social Science Research Program of Jiangsu Higher Education Institutions, General Program · 江苏省高校哲学社会科学研究一般项目 · 主持",
+    "Yangzhou “Lü Yang Jin Feng” Outstanding Doctoral Talent Program · 扬州市“绿杨金凤”优秀博士人才项目 · 主持"
+  ],
+  "students": [],
+  "courses": [
+    "Undergraduate · 本科生：应用回归分析（Applied Regression Analysis）",
+    "Undergraduate · 本科生：概率论与数理统计（Probability and Mathematical Statistics）",
+    "Undergraduate · 本科生：高等数学（Advanced Mathematics）",
+    "Undergraduate · 本科生：线性代数（Linear Algebra）",
+    "Graduate · 研究生：多元统计分析（Multivariate Statistical Analysis）",
+    "Graduate · 研究生：数学建模（Mathematical Modelling）"
+  ],
+  "news": [],
+  "office": "Room 503, Building 56, Slender West Lake Campus, Yangzhou University",
+  "service": [
+    "Computational Statistics & Data Analysis",
+    "Statistical Papers",
+    "Journal of Statistical Computation and Simulation",
+    "Communications in Statistics",
+    "PLOS ONE",
+    "系统科学与数学"
+  ],
+  "source": "Official faculty homepage, accessed 13 October 2026"
+}
