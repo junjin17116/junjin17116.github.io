@@ -11,40 +11,34 @@
   "portrait": "assets/photo.png",
   "interests": [
     {
+      "id": "statistical",
+      "en": "Statistical machine learning",
+      "cn": "统计机器学习",
+      "description": "Statistical methods and theory for learning from data."
+    },
+    {
       "id": "federated",
       "en": "Federated learning",
       "cn": "联邦学习",
-      "description": "Collaborative statistical learning across institutions, with attention to heterogeneous data and data locality."
+      "description": "Collaborative learning across institutions and heterogeneous datasets."
     },
     {
       "id": "distributed",
-      "en": "Distributed learning and statistical inference",
-      "cn": "分布式学习与统计推断",
-      "description": "Communication-efficient estimation and inference, including one-round aggregation, curvature transfer and gradient-matched surrogate methods."
+      "en": "Distributed statistical inference",
+      "cn": "分布式统计推断",
+      "description": "Communication-efficient estimation and inference for distributed data."
     },
     {
-      "id": "privacy",
-      "en": "Differential privacy",
-      "cn": "差分隐私",
-      "description": "Privacy-preserving estimation and inference for distributed statistical learning."
-    },
-    {
-      "id": "neural",
-      "en": "Neural networks and robust regression",
-      "cn": "神经网络与稳健回归",
-      "description": "Nonlinear statistical learning using neural networks, with particular interest in quantile, composite quantile and expectile regression."
-    },
-    {
-      "id": "conformal",
-      "en": "Conformal prediction",
-      "cn": "共形预测",
-      "description": "Predictive uncertainty quantification and coverage guarantees."
+      "id": "generative",
+      "en": "Generative modelling",
+      "cn": "生成式建模",
+      "description": "Statistical modelling and learning of data-generating distributions."
     },
     {
       "id": "image",
-      "en": "Spatial and image data analysis",
-      "cn": "空间与图像数据分析",
-      "description": "Nonparametric and spatially varying coefficient models on complex domains, with applications to image data."
+      "en": "Image and spatiotemporal data analysis",
+      "cn": "图像与时空数据分析",
+      "description": "Statistical modelling and analysis of images and spatiotemporal data."
     }
   ],
   "education": [
@@ -73,7 +67,8 @@
       "volume": "",
       "doi": "10.1080/00949655.2026.2749428",
       "topics": [
-        "distributed"
+        "distributed",
+        "statistical"
       ],
       "url": "https://doi.org/10.1080/00949655.2026.2749428"
     },
@@ -88,7 +83,8 @@
       "topics": [
         "distributed",
         "neural",
-        "robust"
+        "robust",
+        "statistical"
       ],
       "url": "https://doi.org/10.1016/j.eswa.2026.134604"
     },
@@ -103,7 +99,8 @@
       "topics": [
         "distributed",
         "neural",
-        "robust"
+        "robust",
+        "statistical"
       ],
       "url": "https://doi.org/10.1016/j.neucom.2026.133836"
     },
@@ -117,7 +114,8 @@
       "doi": "10.1016/j.csda.2026.108417",
       "topics": [
         "distributed",
-        "robust"
+        "robust",
+        "statistical"
       ],
       "url": "https://doi.org/10.1016/j.csda.2026.108417"
     },
@@ -131,7 +129,8 @@
       "doi": "10.1007/s00362-025-01787-7",
       "topics": [
         "distributed",
-        "robust"
+        "robust",
+        "statistical"
       ],
       "url": "https://doi.org/10.1007/s00362-025-01787-7"
     },
@@ -144,9 +143,10 @@
       "volume": "Article 114726",
       "doi": "",
       "topics": [
-        "clustering"
+        "clustering",
+        "statistical"
       ],
-      "url": "https://teacher.yzu.edu.cn/JJ1234567/zh_CN/index/496567/list/index.htm"
+      "url": ""
     },
     {
       "id": "jin2025nonrandom",
@@ -158,9 +158,10 @@
       "doi": "",
       "topics": [
         "distributed",
-        "robust"
+        "robust",
+        "statistical"
       ],
-      "url": "https://teacher.yzu.edu.cn/JJ1234567/zh_CN/index/496567/list/index.htm"
+      "url": ""
     },
     {
       "id": "jin2024logistic",
@@ -171,9 +172,10 @@
       "volume": "51(8): 1427–1445",
       "doi": "",
       "topics": [
-        "robust"
+        "robust",
+        "statistical"
       ],
-      "url": "https://teacher.yzu.edu.cn/JJ1234567/zh_CN/index/496567/list/index.htm"
+      "url": ""
     },
     {
       "id": "jin2023cqr",
@@ -184,9 +186,10 @@
       "volume": "57(4): 811–843",
       "doi": "",
       "topics": [
-        "robust"
+        "robust",
+        "statistical"
       ],
-      "url": "https://teacher.yzu.edu.cn/JJ1234567/zh_CN/index/496567/list/index.htm"
+      "url": ""
     },
     {
       "id": "jin2023modal",
@@ -198,9 +201,10 @@
       "doi": "",
       "topics": [
         "distributed",
-        "robust"
+        "robust",
+        "statistical"
       ],
-      "url": "https://teacher.yzu.edu.cn/JJ1234567/zh_CN/index/496567/list/index.htm"
+      "url": ""
     },
     {
       "id": "jin2021missing",
@@ -212,9 +216,10 @@
       "doi": "",
       "topics": [
         "nonparametric",
-        "robust"
+        "robust",
+        "statistical"
       ],
-      "url": "https://teacher.yzu.edu.cn/JJ1234567/zh_CN/index/496567/list/index.htm"
+      "url": ""
     },
     {
       "id": "jin2021splines",
@@ -225,9 +230,10 @@
       "volume": "84: 693–712",
       "doi": "",
       "topics": [
-        "nonparametric"
+        "nonparametric",
+        "statistical"
       ],
-      "url": "https://teacher.yzu.edu.cn/JJ1234567/zh_CN/index/496567/list/index.htm"
+      "url": ""
     },
     {
       "id": "jin2019splines",
@@ -239,9 +245,10 @@
       "doi": "",
       "topics": [
         "nonparametric",
-        "robust"
+        "robust",
+        "statistical"
       ],
-      "url": "https://teacher.yzu.edu.cn/JJ1234567/zh_CN/index/496567/list/index.htm"
+      "url": ""
     },
     {
       "id": "hao2022voltage",
@@ -252,9 +259,10 @@
       "volume": "10(7): 133–145",
       "doi": "",
       "topics": [
-        "clustering"
+        "clustering",
+        "statistical"
       ],
-      "url": "https://teacher.yzu.edu.cn/JJ1234567/zh_CN/index/496567/list/index.htm"
+      "url": ""
     },
     {
       "id": "jin2018alcohol",
@@ -267,7 +275,7 @@
       "topics": [
         "applications"
       ],
-      "url": "https://teacher.yzu.edu.cn/JJ1234567/zh_CN/index/496567/list/index.htm"
+      "url": ""
     },
     {
       "id": "jin2017singleindex",
@@ -278,9 +286,10 @@
       "volume": "37(12): 2427–2442",
       "doi": "",
       "topics": [
-        "nonparametric"
+        "nonparametric",
+        "statistical"
       ],
-      "url": "https://teacher.yzu.edu.cn/JJ1234567/zh_CN/index/496567/list/index.htm"
+      "url": ""
     },
     {
       "id": "li2023sponsorship",
@@ -330,7 +339,8 @@
       "volume": "33(4): 20–24",
       "topics": [
         "nonparametric",
-        "applications"
+        "applications",
+        "statistical"
       ],
       "doi": "",
       "url": ""
@@ -343,7 +353,14 @@
     "Philosophy and Social Science Research Program of Jiangsu Higher Education Institutions, General Program · 江苏省高校哲学社会科学研究一般项目 · 主持",
     "Yangzhou “Lü Yang Jin Feng” Outstanding Doctoral Talent Program · 扬州市“绿杨金凤”优秀博士人才项目 · 主持"
   ],
-  "students": [],
+  "students": [
+    "刘正君 · 统计学（Statistics）",
+    "王兵 · 数学（Mathematics）",
+    "徐祥义 · 统计学（Statistics）",
+    "邵凯旋 · 统计学（Statistics）",
+    "刘汉平 · 统计学（Statistics）",
+    "陈营 · 统计学（Statistics）"
+  ],
   "courses": [
     "Undergraduate · 本科生：应用回归分析（Applied Regression Analysis）",
     "Undergraduate · 本科生：概率论与数理统计（Probability and Mathematical Statistics）",
