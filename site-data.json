@@ -7,7 +7,7 @@
   "email": "junjin@yzu.edu.cn",
   "official_homepage": "https://teacher.yzu.edu.cn/JJ1234567/zh_CN/index/496567/list/index.htm",
   "github": "https://github.com/junjin17116",
-  "updated": "2026-10-13",
+  "updated": "2026-11-03",
   "portrait": "assets/photo.png",
   "interests": [
     {
@@ -379,5 +379,24 @@
     "PLOS ONE",
     "系统科学与数学"
   ],
-  "source": "Official faculty homepage and author-provided additions, updated 13 October 2026"
+  "source": "Official faculty homepage and author-provided additions, updated 13 October 2026",
+  "book_reviews": [
+    {
+      "id": "jin2026federated-book-review",
+      "year": 2026,
+      "title": "Federated Learning: Foundations and Applications",
+      "authors": "Jun Jin",
+      "venue": "International Statistical Review",
+      "doi": "10.1111/insr.70077",
+      "status": "Accepted / 已录用",
+      "reviewed_book": {
+        "title": "Federated Learning: Foundations and Applications",
+        "editors": "Rajkumar Buyya, Anwesha Mukherjee, and Sajal K. Das",
+        "publisher": "Morgan Kaufmann/Elsevier",
+        "year": 2026,
+        "pages": 366,
+        "isbn": "978-0-443-44433-3"
+      }
+    }
+  ]
 }

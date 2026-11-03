@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""Regenerate all six static pages: python3 build.py. No dependencies."""
+"""Regenerate all seven static pages: python3 build.py. No dependencies."""
 from pathlib import Path
 import json, html
 ROOT=Path(__file__).resolve().parent
 D=json.loads((ROOT/'site-data.json').read_text(encoding='utf-8'))
 def e(s): return html.escape(str(s),quote=True)
 def link(url,label): return f'<a href="{e(url)}">{e(label)}</a>'
-NAV=[('index.html','Home'),('paper.html','Papers'),('paper_topic.html','Papers by topics'),('grants.html','Grants'),('group.html','Group'),('teaching.html','Teaching')]
+NAV=[('index.html','Home'),('paper.html','Papers'),('book_reviews.html','Book Reviews · 书评'),('paper_topic.html','Papers by topics'),('grants.html','Grants'),('group.html','Group'),('teaching.html','Teaching')]
 def page(file,title,body):
     nav=''.join(f'<a href="{f}"'+(' aria-current="page"' if file==f else '')+f'>{t}</a>' for f,t in NAV)
     out=f'''<!doctype html>
@@ -36,6 +36,14 @@ early=sorted([p for p in D['publications'] if 2017 <= p['year'] <= 2020],key=lam
 if early:
     papers+='<h2>2017–2020</h2>'+pubs(early)
 page('paper.html','Selected publications',papers)
+reviews=''
+for year in sorted({r['year'] for r in D.get('book_reviews',[])},reverse=True):
+    reviews+=f'<h2>{year}</h2><ul class="publications">'
+    for r in [r for r in D['book_reviews'] if r['year']==year]:
+        book=r['reviewed_book']
+        reviews+=f'''<li id="{e(r['id'])}"><div class="publication-title">Book review: {e(r['title'])}.</div><div class="authors"><strong>{e(r['authors'])}</strong></div><div class="publication-meta">{e(r['venue'])}, {r['year']}. {e(r['status'])}.</div><div class="publication-links">{link('https://doi.org/'+r['doi'],'DOI: '+r['doi'])}</div><p class="quiet">Reviewed book: <cite>{e(book['title'])}</cite>, edited by {e(book['editors'])}. {e(book['publisher'])}, {book['year']}. {book['pages']} pages. ISBN: {e(book['isbn'])}.</p></li>'''
+    reviews+='</ul>'
+page('book_reviews.html','Book Reviews · 书评',reviews)
 topics='<div class="topic-links">'+''.join(link('#'+x['id'],x['en']) for x in D['interests'])+link('#nonparametric','Nonparametric and robust regression')+'</div>'
 for x in D['interests']:
     topics+=f'<section class="topic-section" id="{e(x["id"])}"><h2>{e(x["en"])}</h2><p lang="zh-CN">{e(x["cn"])}</p><p>{e(x["description"])}</p>'
@@ -58,4 +66,5 @@ teaching='<h2>Teaching and learning</h2><p>My teaching and academic interests ce
 if D['courses']: teaching+='<h2>Courses</h2><ul>'+''.join(f'<li>{e(x)}</li>' for x in D['courses'])+'</ul>'
 teaching+='<h2>Course information</h2><p>For formal course listings and current teaching arrangements, please see my '+link(D['official_homepage'],'official faculty profile')+'.</p><p>For academic questions, contact '+link('mailto:'+D['email'],D['email'])+'.</p>'
 page('teaching.html','Teaching',teaching)
-print('Generated 6 static pages.')
+print('Generated 7 static pages.')
+
