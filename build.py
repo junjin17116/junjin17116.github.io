@@ -6,7 +6,7 @@ ROOT=Path(__file__).resolve().parent
 D=json.loads((ROOT/'site-data.json').read_text(encoding='utf-8'))
 def e(s): return html.escape(str(s),quote=True)
 def link(url,label): return f'<a href="{e(url)}">{e(label)}</a>'
-NAV=[('index.html','Home'),('paper.html','Papers'),('book_reviews.html','Book Reviews · 书评'),('paper_topic.html','Papers by topics'),('grants.html','Grants'),('group.html','Group'),('teaching.html','Teaching')]
+NAV=[('index.html','Home'),('paper.html','Papers'),('paper_topic.html','Papers by topics'),('grants.html','Grants'),('group.html','Group'),('teaching.html','Teaching')]
 def page(file,title,body):
     nav=''.join(f'<a href="{f}"'+(' aria-current="page"' if file==f else '')+f'>{t}</a>' for f,t in NAV)
     out=f'''<!doctype html>
@@ -22,6 +22,12 @@ def pubs(items, prefix=''):
         link_html=f'<div class="publication-links">{links}</div>' if links else ''
         entries.append(f'<li id="{e(prefix+p["id"])}"><div class="publication-title">{e(p["title"])}</div><div class="authors">{e(p["authors"]).replace("Jun Jin", "<strong>Jun Jin</strong>").replace("金君", "<strong>金君</strong>")}</div><div class="publication-meta">{e(meta)}</div>{link_html}</li>')
     return '<ul class="publications">'+''.join(entries)+'</ul>'
+def review_entries(items, prefix=''):
+    entries=[]
+    for r in items:
+        book=r['reviewed_book']
+        entries.append(f'''<li id="{e(prefix+r['id'])}"><div class="publication-title">Book review: {e(r['title'])}.</div><div class="authors"><strong>{e(r['authors'])}</strong></div><div class="publication-meta">{e(r['venue'])}, {r['year']}. {e(r['status'])}.</div><div class="publication-links">{link('https://doi.org/'+r['doi'],'DOI: '+r['doi'])}</div><p class="quiet">Reviewed book: <cite>{e(book['title'])}</cite>, edited by {e(book['editors'])}. {e(book['publisher'])}, {book['year']}. {book['pages']} pages. ISBN: {e(book['isbn'])}.</p></li>''')
+    return '<ul class="publications">'+''.join(entries)+'</ul>' if entries else ''
 interest='<ul class="interest-list">'+''.join(f'<li>{link("paper_topic.html#"+x["id"],x["en"])} <span lang="zh-CN">· {e(x["cn"])}</span></li>' for x in D['interests'])+'</ul>'
 home=f'''<section class="intro" aria-label="Profile"><img class="portrait" src="{e(D['portrait'])}" alt="Portrait of Jun Jin" width="350" height="421"><div><p>My name is Jun Jin (金君). I am a lecturer and master's supervisor at the School of Mathematical Sciences, Yangzhou University.</p><p lang="zh-CN">扬州大学数学科学学院 · 讲师 · 硕士生导师</p><p>E-mail: {link('mailto:'+D['email'],D['email'])}<br>{link(D['official_homepage'],'Yangzhou University faculty profile')}<br>{link(D['github'],'GitHub')}</p><p>Office: {e(D['office'])}</p><h2>Research interests</h2><p>My research interests include:</p>{interest}<div class="invite"><p>I welcome inquiries about graduate study and research collaboration in statistics and machine learning.</p><p lang="zh-CN">欢迎对统计学与机器学习感兴趣的同学交流，也欢迎开展科研合作。</p></div></div></section>'''
 for key,label in [('education','Education'),('experience','Experience')]:
@@ -30,21 +36,13 @@ home+='<h2>Research overview</h2><p>My research spans statistical machine learni
 if D['news']: home+='<h2>News</h2><ul>'+''.join(f'<li>{e(x)}</li>' for x in D['news'])+'</ul>'
 page('index.html',D['name']+' ['+D['name_cn']+']',home)
 papers='<p class="quiet">* Corresponding author · # Student author</p>'
-for year in sorted({p['year'] for p in D['publications'] if not 2017 <= p['year'] <= 2020},reverse=True):
-    papers+=f'<h2>{year}</h2>'+pubs([p for p in D['publications'] if p['year']==year])
+for year in sorted({p['year'] for p in D['publications'] if not 2017 <= p['year'] <= 2020} | {r['year'] for r in D.get('book_reviews',[])},reverse=True):
+    papers+=f'<h2>{year}</h2>'+pubs([p for p in D['publications'] if p['year']==year])+review_entries([r for r in D.get('book_reviews',[]) if r['year']==year])
 early=sorted([p for p in D['publications'] if 2017 <= p['year'] <= 2020],key=lambda p:p['year'],reverse=True)
 if early:
     papers+='<h2>2017–2020</h2>'+pubs(early)
 page('paper.html','Selected publications',papers)
-reviews=''
-for year in sorted({r['year'] for r in D.get('book_reviews',[])},reverse=True):
-    reviews+=f'<h2>{year}</h2><ul class="publications">'
-    for r in [r for r in D['book_reviews'] if r['year']==year]:
-        book=r['reviewed_book']
-        reviews+=f'''<li id="{e(r['id'])}"><div class="publication-title">Book review: {e(r['title'])}.</div><div class="authors"><strong>{e(r['authors'])}</strong></div><div class="publication-meta">{e(r['venue'])}, {r['year']}. {e(r['status'])}.</div><div class="publication-links">{link('https://doi.org/'+r['doi'],'DOI: '+r['doi'])}</div><p class="quiet">Reviewed book: <cite>{e(book['title'])}</cite>, edited by {e(book['editors'])}. {e(book['publisher'])}, {book['year']}. {book['pages']} pages. ISBN: {e(book['isbn'])}.</p></li>'''
-    reviews+='</ul>'
-page('book_reviews.html','Book Reviews · 书评',reviews)
-topics='<div class="topic-links">'+''.join(link('#'+x['id'],x['en']) for x in D['interests'])+link('#nonparametric','Nonparametric and robust regression')+'</div>'
+topics='<div class="topic-links">'+''.join(link('#'+x['id'],x['en']) for x in D['interests'])+link('#nonparametric','Nonparametric and robust regression')+link('#book-reviews','Book Reviews')+'</div>'
 for x in D['interests']:
     topics+=f'<section class="topic-section" id="{e(x["id"])}"><h2>{e(x["en"])}</h2><p lang="zh-CN">{e(x["cn"])}</p><p>{e(x["description"])}</p>'
     selected=[p for p in D['publications'] if x['id'] in p['topics']]
@@ -53,7 +51,11 @@ for x in D['interests']:
 topics+='<section id="nonparametric"><h2>Nonparametric and robust regression</h2>'+pubs([p for p in D['publications'] if 'nonparametric' in p['topics'] or 'robust' in p['topics']], 'nonparametric-')+'</section>'
 topics+='<section id="clustering"><h2>Clustering and applied statistical modelling</h2>'+pubs([p for p in D['publications'] if 'clustering' in p['topics']], 'clustering-')+'</section>'
 topics+='<section id="applications"><h2>Applied statistics and interdisciplinary research</h2>'+pubs([p for p in D['publications'] if 'applications' in p['topics']], 'applications-')+'</section>'
+topics+='<section class="topic-section" id="book-reviews"><h2>Book Reviews</h2>'+review_entries(D.get('book_reviews',[]), 'book-reviews-')+'</section>'
 page('paper_topic.html','Publications and research by topics',topics)
+(ROOT/'book_reviews.html').write_text('''<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Book Reviews | Jun Jin</title><meta http-equiv="refresh" content="0; url=paper_topic.html#book-reviews"><link rel="canonical" href="https://junjin17116.github.io/paper_topic.html#book-reviews"></head><body><p>Book Reviews: <a href="paper_topic.html#book-reviews">view in Papers by topics</a>.</p></body></html>
+''', encoding='utf-8')
 grants='<p>My research focuses on statistical machine learning, federated learning, distributed statistical inference, generative modelling, and image and spatiotemporal data analysis.</p>'
 if D['grants']: grants+='<h2>Research grants</h2><ul>'+''.join(f'<li>{e(x)}</li>' for x in D['grants'])+'</ul>'
 grants+='<h2>Funding information</h2><p>For current research grant details, please refer to my '+link(D['official_homepage'],'official faculty profile')+'.</p><h2>Research collaboration</h2><p>I welcome collaboration in statistical machine learning, federated learning, distributed statistical inference, generative modelling, and image and spatiotemporal data analysis.</p><p>Contact: '+link('mailto:'+D['email'],D['email'])+'</p>'

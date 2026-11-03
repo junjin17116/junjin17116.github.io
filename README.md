@@ -6,7 +6,7 @@ Website: https://junjin17116.github.io/
 
 ## Structure
 
-Home · Papers · Book Reviews / 书评 · Papers by topics · Grants · Group · Teaching
+Home · Papers · Papers by topics · Grants · Group · Teaching
 
 Static HTML and CSS; no framework or package installation required. GitHub Pages publishes from the main branch, repository root.
 
@@ -20,3 +20,5 @@ Official profile: https://teacher.yzu.edu.cn/JJ1234567/zh_CN/index/496567/list/i
 
 The layout follows the academic site structure of https://xingcaigithub.github.io/index.html using original HTML/CSS and responsive styling.
 
+
+Book reviews appear in the Papers year list and in the Book Reviews section of Papers by topics. The former `book_reviews.html` URL redirects to that section.
